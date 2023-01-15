@@ -4,6 +4,7 @@ import { OrderData } from "../../src/domain/data/order-data";
 import { Order } from "../../src/domain/entities/order";
 import { CouponInMemory } from "../../src/infra/database/in-memory/coupon-in-memory";
 import { ProductInMemory } from "../../src/infra/database/in-memory/product-in-memory";
+import { FreightGatewayMemory } from "../../src/infra/gateways/freight-gateway-memory";
 
 describe("Checkout unit test (UseCase)", () => {
     let sut: Checkout;
@@ -19,7 +20,8 @@ describe("Checkout unit test (UseCase)", () => {
         sut = new Checkout(
             new ProductInMemory(),
             new CouponInMemory(),
-            orderData
+            orderData,
+            new FreightGatewayMemory()
         );
     });
 

@@ -51,14 +51,6 @@ describe("Order unit tests (Domain)", () => {
         }).toThrowError("Duplicated product");
     });
 
-    it("should be able to create an order with 3 products and calculate the total with freight", () => {
-        const order = new Order("582.407.930-70");
-        order.addItem(new Product(1, "A", 22, 20, 15, 10, 0.9), 1);
-        order.addItem(new Product(2, "B", 30, 100, 30, 10, 3), 1);
-        order.addItem(new Product(3, "C", 45, 200, 100, 50, 40), 2);
-        expect(order.totalWithFreight()).toBe(582);
-    });
-
     it("should be able to create an order with code", () => {
         const order = new Order("582.407.930-70");
         order.addItem(new Product(1, "A", 22, 20, 15, 10, 0.9), 1);

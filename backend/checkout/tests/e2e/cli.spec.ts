@@ -60,7 +60,7 @@ describe("CLI E2E tests", () => {
         await sut.type("checkout");
         const checkoutOutput = checkoutSpy.mock.results[0].value;
         expect(checkoutOutput).toMatchObject({
-            total: 54,
+            total: 44,
             orderCode: `${getCurrentFullYear()}00000001`,
         });
     });

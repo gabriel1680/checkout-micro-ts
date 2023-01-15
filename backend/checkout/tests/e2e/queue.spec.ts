@@ -24,7 +24,7 @@ describe("Queue E2E tests", () => {
         await queue.publish("checkout", payload);
         const checkoutOutput = getResult();
         expect(checkoutOutput).toMatchObject({
-            total: 54,
+            total: 44,
             orderCode: `${getCurrentFullYear()}00000001`,
         });
     });

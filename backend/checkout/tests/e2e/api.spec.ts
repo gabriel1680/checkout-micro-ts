@@ -37,7 +37,7 @@ describe("API E2E tests", () => {
         };
         const response = await api.post("/checkout").send(payload);
         expect(response.status).toBe(200);
-        expect(response.body.total).toBe(642);
+        expect(response.body.total).toBe(1102);
     });
 
     it("should be able to do the checkout with 3 products with coupon and calculate the total even if coupon not found", async () => {
@@ -52,7 +52,7 @@ describe("API E2E tests", () => {
         };
         const response = await api.post("/checkout").send(payload);
         expect(response.status).toBe(200);
-        expect(response.body.total).toBe(642);
+        expect(response.body.total).toBe(1102);
     });
 
     it("should be able to do the checkout with 3 products with coupon and calculate the total", async () => {
@@ -67,7 +67,7 @@ describe("API E2E tests", () => {
         };
         const response = await api.post("/checkout").send(payload);
         expect(response.status).toBe(200);
-        expect(response.body.total).toBe(601.6);
+        expect(response.body.total).toBe(1061.6);
     });
 
     it("should not be able to apply coupon when it is out of dated", async () => {
@@ -82,7 +82,7 @@ describe("API E2E tests", () => {
         };
         const response = await api.post("/checkout").send(payload);
         expect(response.status).toBe(200);
-        expect(response.body.total).toBe(642);
+        expect(response.body.total).toBe(1102);
     });
 
     it("should not be able to do the checkout if product quantity is negative", async () => {
@@ -124,7 +124,7 @@ describe("API E2E tests", () => {
         };
         const response = await api.post("/checkout").send(payload);
         expect(response.status).toBe(200);
-        expect(response.body.total).toBe(642);
+        expect(response.body.total).toBe(1102);
     });
 
     it("should be able to do the checkout and calculate the total with minimum freight of R$10,00", async () => {
